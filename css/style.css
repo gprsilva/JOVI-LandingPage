@@ -1,0 +1,648 @@
+/* ================FONTE — vivoSansSC*/
+@font-face {
+    font-family: 'vivoSansSC';
+    src:
+        url("https://de-gdpr-exstatic-vivofs.vivo.com/sFhAQhTYYDsNOJz1/1732764346924/0bb44c248070d8bdf30e4cb868866850.eot") format('embedded-opentype'),
+        url("https://de-gdpr-exstatic-vivofs.vivo.com/sFhAQhTYYDsNOJz1/1732764353690/103324fe5bc060bcdd646726624e68b9.woff2") format('woff2'),
+        url("https://de-gdpr-exstatic-vivofs.vivo.com/sFhAQhTYYDsNOJz1/1732764358213/b4a1d5e1658c72008f36e455768f11ba.woff") format('woff'),
+        url("https://de-gdpr-exstatic-vivofs.vivo.com/sFhAQhTYYDsNOJz1/1732764363506/48bbf483d4793d9074888fe2598973fe.ttf") format('truetype'),
+        url("https://de-gdpr-exstatic-vivofs.vivo.com/sFhAQhTYYDsNOJz1/1732764367884/bb5967bd1ee921fccc9dd75996d9a91d.svg") format('svg');
+    font-display: swap;
+}
+
+/* =================VARIÁVEIS DE TEMA */
+
+:root {
+    --transition-speed: 0.3s;
+    --radius-card: 1rem;
+    --radius-pill: 999px;
+}
+
+/* TEMA 1 - BLUE */
+body.tema1 {
+    --bg-color: #f4fbff;
+    --bg-card: #ffffff;
+    --bg-elevated: #e8f5fc;
+    --text-primary: #17212b;
+    --text-secondary: #607586;
+    --text-highlight: #42aee3;
+    --button-primary-bg: #42aee3;
+    --button-primary-text: #ffffff;
+    --button-secondary-border: rgba(66, 174, 227, 0.35);
+    --button-secondary-text: #2787b8;
+    --pill-border: rgba(66, 174, 227, 0.22);
+    --card-border: rgba(66, 174, 227, 0.16);
+    --shadow-card: 0 4px 24px rgba(46, 104, 132, 0.10);
+    --header-bg-hero: rgba(255, 255, 255, 0.55);
+    --header-bg-scroll: color-mix(in srgb, var(--bg-card) 55%, transparent);
+}
+
+/* TEMA 2 - PURPLE */
+body.tema2 {
+    --bg-color: #faf7ff;
+    --bg-card: #ffffff;
+    --bg-elevated: #f3eaff;
+    --text-primary: #241d2e;
+    --text-secondary: #766b82;
+    --text-highlight: #9b70d6;
+    --button-primary-bg: #9b70d6;
+    --button-primary-text: #ffffff;
+    --button-secondary-border: rgba(155, 112, 214, 0.35);
+    --button-secondary-text: #8053bd;
+    --pill-border: rgba(155, 112, 214, 0.22);
+    --card-border: rgba(155, 112, 214, 0.16);
+    --shadow-card: 0 4px 24px rgba(108, 72, 145, 0.10);
+    --header-bg-hero: rgba(255, 255, 255, 0.55);
+    --header-bg-scroll: color-mix(in srgb, var(--bg-card) 55%, transparent);
+}
+
+/* TEMA 3 - BLACK */
+body.tema3 {
+    --bg-color: #111214;
+    --bg-card: #191b1f;
+    --bg-elevated: #22252a;
+    --text-primary: #f1f2f3;
+    --text-secondary: #a6a9ae;
+    --text-highlight: #d4d7db;
+    --button-primary-bg: #d4d7db;
+    --button-primary-text: #111214;
+    --button-secondary-border: rgba(212, 215, 219, 0.30);
+    --button-secondary-text: #d4d7db;
+    --pill-border: rgba(212, 215, 219, 0.16);
+    --card-border: rgba(212, 215, 219, 0.12);
+    --shadow-card: 0 4px 28px rgba(0, 0, 0, 0.45);
+    --header-bg-hero: rgba(255, 255, 255, 0.7);
+    --header-bg-scroll: color-mix(in srgb, var(--bg-card) 55%, transparent);
+}
+
+/*   RESET   */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html, body {
+    overflow-x: clip;
+}
+
+body {
+    font-family: "vivoSansSC", "Inter", Arial, sans-serif;
+    background: var(--bg-color);
+    color: var(--text-primary);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+    min-height: 100vh;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--text-highlight);
+    border-radius: 999px;
+    box-shadow: 0 0 8px color-mix(in srgb, var(--text-highlight) 60%, transparent);
+}
+
+/*BARRA DE PROGRESSO DE SCROLL */
+
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    background: var(--text-highlight);
+    width: 0%;
+    z-index: 9999;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 8px var(--text-highlight);
+}
+
+/* ============================================
+   HEADER / MENU / SELETOR DE TEMAS
+   ============================================ */
+
+.header {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 20px);
+    max-width: 1400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background: var(--header-bg-hero);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--card-border);
+    border-radius: 70px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, .25), inset 0 1px 0 rgba(255, 255, 255, .05);
+    z-index: 1000;
+    transition: background-color var(--transition-speed), border-color var(--transition-speed);
+}
+
+header.past-hero .header {
+    background: var(--header-bg-scroll);
+}
+
+.logo {
+    width: 85px;
+    height: auto;
+    display: block;
+    margin-left: 40px;
+}
+
+.logo-branca {
+    display: none;
+}
+
+.logo-padrao {
+    display: block;
+}
+
+/* APENAS NO TEMA BLACK a logo muda durante o scroll */
+body.tema3 header.past-hero .logo-padrao {
+    display: none;
+}
+
+body.tema3 header.past-hero .logo-branca {
+    display: block;
+}
+
+/* Nos temas Blue e Purple a logo NUNCA muda */
+body.tema1 header.past-hero .logo-padrao {
+    display: block;
+}
+
+body.tema1 header.past-hero .logo-branca {
+    display: none;
+}
+
+body.tema2 header.past-hero .logo-padrao {
+    display: block;
+}
+
+body.tema2 header.past-hero .logo-branca {
+    display: none;
+}
+
+.menu {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.menu-link {
+    position: relative;
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: .95rem;
+    font-weight: 600;
+    letter-spacing: .3px;
+    transition: color .3s;
+}
+
+.menu-link:hover {
+    color: var(--text-primary);
+}
+
+.menu-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    width: 0;
+    height: 3px;
+    transform: translateX(-50%);
+    border-radius: 999px;
+    background: var(--text-highlight);
+    transition: width .3s;
+}
+
+.menu-link:hover::after,
+.menu-link.active::after {
+    width: 100%;
+}
+
+.menu-link.active {
+    color: var(--text-primary);
+}
+
+.theme-switcher {
+    display: flex;
+    gap: 4px;
+    padding: 4px;
+    background: rgba(255, 255, 255, .04);
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: 999px;
+}
+
+.theme-switcher input {
+    display: none;
+}
+
+.theme-switcher label {
+    padding: 10px 18px;
+    border-radius: 999px;
+    cursor: pointer;
+    color: var(--text-secondary);
+    font-size: .85rem;
+    font-weight: 600;
+    transition: .25s;
+}
+
+.theme-switcher label:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.theme-switcher input:checked + label {
+    background: var(--text-highlight);
+    color: var(--button-primary-text);
+    box-shadow: 0 0 20px color-mix(in srgb, var(--text-highlight) 45%, transparent);
+}
+
+/* ============================================
+   HERO — vídeo controlado por scroll
+   ============================================ */
+
+.hero-scroll-track {
+    position: relative;
+    height: 300vh;
+}
+
+.hero-sticky {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    min-height: 620px;
+    overflow: hidden;
+    isolation: isolate;
+    background: #e9e8eb;
+}
+
+.hero-video {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    pointer-events: none;
+}
+
+.hero-sticky::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0) 48%, rgba(255, 255, 255, .06) 100%);
+}
+
+.hero-copy {
+    position: absolute;
+    z-index: 5;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 0 40px;
+    text-align: center;
+    pointer-events: none;
+}
+
+.hero-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(20px, 4vw, 70px);
+    margin: 0;
+    font-size: clamp(3rem, 7vw, 7rem);
+    line-height: .95;
+    font-weight: 400;
+    letter-spacing: -.06em;
+    white-space: nowrap;
+}
+
+.hero-title span {
+    --in: 0;
+    --active: 0;
+    display: inline-block;
+    opacity: var(--in);
+    color: var(--text-primary);
+    transform: translateY(calc((1 - var(--in)) * 28px)) scale(calc(0.94 + var(--in) * 0.06 + var(--active) * 0.05));
+    transition: opacity .12s linear, transform .12s linear, color .25s ease;
+    will-change: transform, opacity;
+}
+
+body.tema3 .hero-title span {
+    color: #000000;
+}
+
+.hero-descricao {
+    --in: 0;
+    max-width: 650px;
+    margin: 70px auto 0;
+    font-size: clamp(1rem, 1.3vw, 1.2rem);
+    line-height: 1.6;
+    color: var(--text-primary);
+    opacity: var(--in);
+    transform: translateY(calc((1 - var(--in)) * 25px));
+    transition: opacity .3s ease, transform .3s ease;
+}
+
+body.tema3 .hero-descricao {
+    color: #000000;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-title span,
+    .hero-descricao {
+        transition: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-title {
+        flex-direction: column;
+        gap: 2px;
+        font-size: clamp(3.2rem, 15vw, 5.5rem);
+        line-height: .88;
+        white-space: normal;
+    }
+
+    .hero-descricao {
+        max-width: 330px;
+        font-size: .9rem;
+    }
+}
+
+/* ============================================
+   SEÇÕES PLACEHOLDER
+   ============================================ */
+
+.secao-placeholder {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid var(--card-border);
+}
+
+/* ============================================
+   SEÇÃO — PROBLEMA
+   ============================================ */
+
+.secao-problema {
+    padding: 140px 40px 100px;
+    border-top: 1px solid var(--card-border);
+}
+
+.problema-conteudo {
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.problema-titulo {
+    margin-top: 18px;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 500;
+    letter-spacing: -.02em;
+    line-height: 1.15;
+    color: var(--text-primary);
+}
+
+.problema-texto {
+    margin-top: 22px;
+    font-size: clamp(1rem, 1.3vw, 1.15rem);
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+/* ============================================
+   SEÇÃO — SOLUÇÕES
+   ============================================ */
+
+.secao-solucoes {
+    padding: 120px 40px 160px;
+    min-height: 100vh;
+    border-top: 1px solid var(--card-border);
+}
+
+.solucoes-intro {
+    max-width: 780px;
+    margin: 0 auto 56px;
+    text-align: center;
+}
+
+.solucoes-intro h2 {
+    margin-top: 18px;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 500;
+    letter-spacing: -.02em;
+    color: var(--text-primary);
+}
+
+.solucoes-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.solucao-card {
+    position: relative;
+    min-height: 620px;
+    overflow: hidden;
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    background: var(--bg-card);
+    border: 1px solid var(--card-border);
+    transition: transform .3s ease, box-shadow .3s ease;
+    cursor: pointer;
+}
+
+.solucao-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================
+   IMAGENS DOS CARDS - CONFIGURAÇÃO BASE
+   ============================================ */
+
+.solucao-imagem {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform .5s ease;
+    z-index: 0;
+}
+
+.solucao-card:hover .solucao-imagem {
+    transform: scale(1.05);
+}
+
+/* ============================================
+   AJUSTES INDIVIDUAIS POR TEMA E POR CARD
+   ============================================ */
+
+/* ========== TEMA 1 - BLUE ========== */
+body.tema1 #solucaoImagem1 { /* Câmera Inteligente - Blue */
+    background-size: cover;
+    background-position: center;
+}
+
+body.tema1 #solucaoImagem2 { /* Smart-Pop - Blue - Mover para ESQUERDA */
+    background-size: 495% 100%;
+    background-position:  50.5% center; /* Valores menores = mais para esquerda */
+}
+
+body.tema1 #solucaoImagem3 { /* JoviEdu - Blue */
+    background-size: cover;
+    background-position: center;
+}
+
+/* ========== TEMA 2 - PURPLE (REFERÊNCIA) ========== */
+body.tema2 #solucaoImagem1 { /* Câmera Inteligente - Purple */
+    background-size: cover;
+    background-position: center;
+}
+
+body.tema2 #solucaoImagem2 { /* Smart-Pop - Purple (do jeito que você quer) */
+    background-size: cover;
+    background-position: center;
+}
+
+body.tema2 #solucaoImagem3 { /* JoviEdu - Purple */
+    background-size: cover;
+    background-position: center;
+}
+
+/* ========== TEMA 3 - BLACK ========== */
+body.tema3 #solucaoImagem1 { /* Câmera Inteligente - Black */
+    background-size: cover;
+    background-position: center;
+}
+
+body.tema3 #solucaoImagem2 { /* Smart-Pop - Black - Mover para DIREITA */
+    background-size: 476%;
+    background-position: 48.5% center; /* Valores maiores = mais para direita */
+}
+
+body.tema3 #solucaoImagem3 { /* JoviEdu - Black */
+    background-size: cover;
+    background-position: center;
+}
+
+/* ========OVERLAY E TEXTOS DOS CARDS */
+
+.solucao-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 28px;
+    background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 60%);
+}
+
+.solucao-titulo-fixo {
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #ffffff;
+    transition: opacity .3s ease, transform .3s ease;
+    text-shadow: none;
+    pointer-events: none;
+}
+
+.solucao-card:hover .solucao-titulo-fixo {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.solucao-texto {
+    position: absolute;
+    bottom: 28px;
+    left: 28px;
+    right: 28px;
+    padding: 24px 28px;
+    background: color-mix(in srgb, var(--bg-card) 70%, transparent);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--card-border);
+    border-radius: calc(var(--radius-card) - 4px);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .35s ease, transform .35s ease;
+    pointer-events: none;
+}
+
+.solucao-card:hover .solucao-texto {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.solucao-titulo {
+    margin-top: 6px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.solucao-descricao {
+    margin-top: 8px;
+    font-size: .92rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+
+    overflow-wrap: anywhere; /* Permite quebra de linha em palavras longas */
+}
+
+/* ============================================
+   RESPONSIVIDADE
+   ============================================ */
+
+@media (max-width: 1100px) {
+    .solucoes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .solucoes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .solucao-card {
+        min-height: 420px;
+    }
+}
+
+@media (max-width: 600px) {
+    .secao-problema,
+    .secao-solucoes {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jovi</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="midia/imgs/favicon.jpeg" type="image/x-icon">
+</head>
+<body class="tema1">
+
+    <!-- Barra de progresso de scroll -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Header fixo com menu e seletor de temas -->
+    <header>
+        <div class="header">
+            <!-- Logo padrão -->
+            <img src="midia/imgs/logo.png" class="logo logo-padrao" alt="JOVI">
+            <!-- Logo branca -->
+            <img src="midia/imgs/logo2.png" class="logo logo-branca" alt="JOVI">
+
+            <nav class="menu">
+                <a href="#problema" class="menu-link active">Problema</a>
+                <a href="#problems" class="menu-link">Soluções</a>
+                <a href="#objetivos" class="menu-link">Público-Alvo</a>
+                <a href="#tecnologia" class="menu-link">Galeria</a>
+                <a href="#beneficios" class="menu-link">Equipe</a>
+                <a href="#dashboard-demo" class="menu-link">Contatos</a>
+            </nav>
+
+            <div class="theme-switcher">
+                <input type="radio" id="tema1" name="tema" checked>
+                <label for="tema1">Blue</label>
+                <input type="radio" id="tema2" name="tema">
+                <label for="tema2">Purple</label>
+                <input type="radio" id="tema3" name="tema">
+                <label for="tema3">Black</label>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="hero" class="hero" aria-labelledby="hero-title">
+        <div class="hero-scroll-track">
+            <div class="hero-sticky">
+
+                <video
+                    id="heroScrollVideo"
+                    class="hero-video"
+                    muted
+                    playsinline
+                    preload="auto"
+                    aria-hidden="true"
+                ></video>
+
+                <div class="hero-copy">
+                    <h1 id="hero-title" class="hero-title">
+                        <span id="veja">Veja.</span>
+                        <span id="entenda">Entenda.</span>
+                        <span id="capture">Capture.</span>
+                    </h1>
+
+                    <p id="heroDescricao" class="hero-descricao">
+                        Uma câmera inteligente que entende o contexto
+                        antes mesmo de você apertar o botão.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEMA -->
+    <section id="problema" class="secao-problema">
+        <div class="problema-conteudo">
+            <h2 class="problema-titulo">Problema</h2>
+            <p class="problema-texto">
+                Texto descrevendo a problemática.
+            </p>
+        </div>
+    </section>
+
+    <!-- SOLUÇÕES -->
+    <section id="problems" class="secao-solucoes">
+        <div class="solucoes-intro">
+            <h2>Soluções</h2>
+        </div>
+
+        <div class="solucoes-grid">
+            <!-- Solução 1-->
+            <article class="solucao-card">
+                <div class="solucao-imagem" id="solucaoImagem1" aria-hidden="true"></div>
+                <div class="solucao-overlay">
+                    <h3 class="solucao-titulo-fixo">AdaptAI</h3>
+                    <div class="solucao-texto">
+                        <h3 class="solucao-titulo">AdaptAI</h3>
+                        <p class="solucao-descricao">
+                            A IA aprende os hábitos do usuário e adapta a câmera automaticamente, priorizando os modos e recursos mais utilizados de acordo com seu perfil e preferências.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Solução 2-->
+            <article class="solucao-card">
+                <div class="solucao-imagem" id="solucaoImagem2" aria-hidden="true"></div>
+                <div class="solucao-overlay">
+                    <h3 class="solucao-titulo-fixo">Smart-Pop</h3>
+                    <div class="solucao-texto">
+                        <h3 class="solucao-titulo">Smart-Pop</h3>
+                        <p class="solucao-descricao">A IA reconhece o ambiente e faz recomendações do modo que mais compativel com o mesmo, deixando a tela limpa, agilizando a troca dos modos e acabando com a confusão visual.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Solução 3-->
+            <article class="solucao-card">
+                <div class="solucao-imagem" id="solucaoImagem3" aria-hidden="true"></div>
+                <div class="solucao-overlay">
+                    <h3 class="solucao-titulo-fixo">JoviEdu</h3>
+                    <div class="solucao-texto">
+                        <h3 class="solucao-titulo">JoviEdu</h3>
+                        <p class="solucao-descricao">A IA não só tira a foto da lousa com clareza, mas também identifica a matéria, organiza em pastas e permite que o usuário tire dúvidas sobre aquele conteúdo diretamente pelo app.</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="objetivos" class="secao-placeholder">
+        <h2>Público-Alvo</h2>
+    </section>
+
+    <section id="tecnologia" class="secao-placeholder">
+        <h2>Galeria</h2>
+    </section>
+
+    <section id="beneficios" class="secao-placeholder">
+        <h2>Equipe</h2>
+    </section>
+
+    <section id="dashboard-demo" class="secao-placeholder">
+        <h2>Contatos</h2>
+    </section>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>

@@ -33,6 +33,8 @@ const SOLUCAO_IMAGENS = {
 
 const sections = document.querySelectorAll("section[id]");
 const links = document.querySelectorAll(".menu-link");
+const menuToggle = document.querySelector(".menu-toggle");
+const menu = document.querySelector(".menu");
 
 function atualizarMenuAtivo() {
     let atual = "";
@@ -56,6 +58,9 @@ const heroVideo = document.getElementById("heroScrollVideo");
 const solucaoImagem1 = document.getElementById("solucaoImagem1");
 const solucaoImagem2 = document.getElementById("solucaoImagem2");
 const solucaoImagem3 = document.getElementById("solucaoImagem3");
+const galeriaImagem1 = document.getElementById("galeriaImagem1");
+const galeriaImagem2 = document.getElementById("galeriaImagem2");
+const galeriaImagem3 = document.getElementById("galeriaImagem3");
 const temaInputs = {
     tema1: document.getElementById("tema1"),
     tema2: document.getElementById("tema2"),
@@ -72,6 +77,7 @@ function aplicarTema(tema, { persistir = true } = {}) {
 
     trocarVideoDoTema(tema);
     trocarImagemDaSolucao(tema);
+    trocarImagemDaGaleria(tema);
 }
 
 function trocarVideoDoTema(tema) {
@@ -80,10 +86,19 @@ function trocarVideoDoTema(tema) {
 
     if (heroVideo.dataset.src === novaFonte) return;
 
+    heroVideo.classList.remove("is-ready");
     heroVideo.dataset.src = novaFonte;
     heroVideo.src = novaFonte;
     heroVideo.load();
 }
+
+heroVideo?.addEventListener("canplay", () => {
+    heroVideo.classList.add("is-ready");
+});
+
+heroVideo?.addEventListener("error", () => {
+    heroVideo.classList.remove("is-ready");
+});
 
 function trocarImagemDaSolucao(tema) {
     const imagens = SOLUCAO_IMAGENS[tema];
@@ -100,6 +115,21 @@ function trocarImagemDaSolucao(tema) {
     }
 }
 
+function trocarImagemDaGaleria(tema) {
+    const imagens = SOLUCAO_IMAGENS[tema];
+    if (!imagens) return;
+
+    if (galeriaImagem1 && imagens.camera) {
+        galeriaImagem1.style.backgroundImage = `url("${imagens.camera}")`;
+    }
+    if (galeriaImagem2 && imagens.smartPop) {
+        galeriaImagem2.style.backgroundImage = `url("${imagens.smartPop}")`;
+    }
+    if (galeriaImagem3 && imagens.joviEdu) {
+        galeriaImagem3.style.backgroundImage = `url("${imagens.joviEdu}")`;
+    }
+}
+
 Object.entries(temaInputs).forEach(([tema, input]) => {
     input?.addEventListener("click", () => aplicarTema(tema));
 });
@@ -111,6 +141,7 @@ document.body.classList.add(temaSalvo);
 if (temaInputs[temaSalvo]) temaInputs[temaSalvo].checked = true;
 trocarVideoDoTema(temaSalvo);
 trocarImagemDaSolucao(temaSalvo);
+trocarImagemDaGaleria(temaSalvo);
 
 // ============================================
 // HERO — vídeo e slogan controlados pelo scroll
@@ -223,3 +254,21 @@ if (heroVideo && heroTrack) {
     }
     agendarAtualizacao();
 }
+
+function fecharMenu() {
+    if (!menuToggle || !menu) return;
+    menu.classList.remove("is-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+}
+
+menuToggle?.addEventListener("click", () => {
+    const aberto = menuToggle.getAttribute("aria-expanded") === "true";
+    menuToggle.setAttribute("aria-expanded", String(!aberto));
+    menu?.classList.toggle("is-open", !aberto);
+});
+
+links.forEach(link => link.addEventListener("click", fecharMenu));
+
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 700) fecharMenu();
+});

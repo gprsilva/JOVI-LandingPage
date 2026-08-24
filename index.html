@@ -20,13 +20,19 @@
             <!-- Logo branca -->
             <img src="midia/imgs/logo2.png" class="logo logo-branca" alt="JOVI">
 
-            <nav class="menu">
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+                <span class="sr-only">Abrir menu de navegação</span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
+
+            <nav class="menu" id="menu-principal" aria-label="Navegação principal">
                 <a href="#problema" class="menu-link active">Problema</a>
                 <a href="#problems" class="menu-link">Soluções</a>
                 <a href="#objetivos" class="menu-link">Público-Alvo</a>
                 <a href="#tecnologia" class="menu-link">Galeria</a>
-                <a href="#beneficios" class="menu-link">Equipe</a>
-                <a href="#dashboard-demo" class="menu-link">Contatos</a>
+                <a href="#beneficios" class="menu-link">Nossa Equipe</a>
+                <a href="#dashboard-demo" class="menu-link">Contato</a>
             </nav>
 
             <div class="theme-switcher">
@@ -40,10 +46,13 @@
         </div>
     </header>
 
+    <main>
     <!-- HERO -->
     <section id="hero" class="hero" aria-labelledby="hero-title">
         <div class="hero-scroll-track">
             <div class="hero-sticky">
+
+                <div class="hero-fallback" aria-hidden="true"></div>
 
                 <video
                     id="heroScrollVideo"
@@ -72,12 +81,40 @@
     </section>
 
     <!-- PROBLEMA -->
-    <section id="problema" class="secao-problema">
-        <div class="problema-conteudo">
-            <h2 class="problema-titulo">Problema</h2>
-            <p class="problema-texto">
-                Texto descrevendo a problemática.
-            </p>
+    <section id="problema" class="secao-problema" aria-labelledby="problema-titulo">
+        <div class="problema-grid">
+
+            <header class="problema-intro">
+                <span class="eyebrow">Problema</span>
+                <h2 id="problema-titulo" class="problema-titulo">Quando o momento é rápido, a câmera precisa acompanhar.</h2>
+                <p class="problema-texto">
+                    Na rotina de estudos, uma lousa pode ser apagada em segundos. Em vez de procurar foco, brilho e modo de captura, estudantes precisam registrar com clareza no primeiro toque.
+                </p>
+            </header>
+
+            <div class="problema-cards">
+
+                <article class="problema-card">
+                    <h3>O conteúdo não espera</h3>
+                    <p>Slides, documentos e anotações precisam ser capturados antes que a oportunidade passe — sem uma etapa extra de configuração.</p>
+                </article>
+
+                <article class="problema-card">
+                    <h3>Uma foto pode virar um obstáculo</h3>
+                    <p>Baixa iluminação, reflexos e foco impreciso deixam textos distantes borrados ou escuros, comprometendo a leitura depois da aula.</p>
+                </article>
+
+                <article class="problema-card problema-card--texto">
+                    <h3>Mais controles não significam mais agilidade</h3>
+                    <p>Interfaces cheias de botões exigem conhecimento técnico justamente quando o usuário só quer abrir a câmera e confiar no resultado.</p>
+                </article>
+
+            </div>
+
+            <blockquote class="problema-lacuna">
+                <p>O desafio não é ensinar fotografia: é fazer a tecnologia entender o contexto e entregar uma imagem nítida, legível e pronta para usar.</p>
+            </blockquote>
+
         </div>
     </section>
 
@@ -128,21 +165,201 @@
         </div>
     </section>
 
-    <section id="objetivos" class="secao-placeholder">
-        <h2>Público-Alvo</h2>
+    <section id="objetivos" class="secao-publico" aria-labelledby="publico-titulo">
+        <div class="publico-grid">
+            <header class="publico-intro">
+                <span class="eyebrow">Público-alvo</span>
+                <h2 id="publico-titulo">Para quem precisa registrar antes que o momento passe.</h2>
+                <p>Entre uma aula, o estágio e o próximo deslocamento, cada registro precisa acontecer no tempo certo. As nossas soluções entendem que essa rotina não oferece uma segunda chance, por isso elas ajudam a transformar lousas, slides e documentos em imagens nítidas antes que o conteúdo desapareça.</p>
+            </header>
+
+            <figure class="publico-imagem" role="img" aria-label="Espaço reservado para a imagem do público-alvo">
+                <img src="midia/imgs/publicoAlvo.png" alt="Imagem do público-alvo, representando uma estudante universitária em movimento, carregando livros e uma mochila, simbolizando a rotina agitada de quem precisa registrar informações rapidamente.">
+                <figcaption>Estudante full-time.</figcaption>
+            </figure>
+
+            <article class="publico-persona">
+                <p class="publico-nome">Mariana, 20</p>
+                <p class="publico-papel">Universitária e estagiária em grandes centros urbanos.</p>
+                <dl class="publico-dados">
+                    <div>
+                        <dt>Rotina</dt>
+                        <dd>Faculdade, estágio e vida social no mesmo dia.</dd>
+                    </div>
+                    <div>
+                        <dt>Registros</dt>
+                        <dd>Lousas, slides, documentos e momentos espontâneos.</dd>
+                    </div>
+                    <div>
+                        <dt>Expectativa</dt>
+                        <dd>Abrir, enquadrar e confiar no resultado — sem ajustes manuais.</dd>
+                    </div>
+                </dl>
+            </article>
+
+            <blockquote class="publico-citacao">
+                <p>“Eu não quero aprender a configurar uma câmera. Quero salvar o que importa, com clareza, na primeira tentativa.”</p>
+            </blockquote>
+        </div>
     </section>
 
-    <section id="tecnologia" class="secao-placeholder">
-        <h2>Galeria</h2>
+    <section id="tecnologia" class="secao-galeria" aria-labelledby="galeria-titulo">
+        <header class="galeria-intro">
+            <span class="eyebrow">Galeria</span>
+            <h2 id="galeria-titulo">A JOVI em cada detalhe.</h2>
+            <p>Uma experiência de câmera que deixa a tecnologia em segundo plano e o momento em foco.</p>
+        </header>
+
+        <div class="galeria-grid">
+            <figure class="galeria-card galeria-card--destaque">
+                <div class="galeria-imagem" id="galeriaImagem1" aria-hidden="true"></div>
+                <figcaption>
+                    <span>01</span>
+                    <h3>Precisão desde a lente</h3>
+                    <p>Uma câmera preparada para entender o que está diante dela.</p>
+                </figcaption>
+            </figure>
+
+            <figure class="galeria-card">
+                <div class="galeria-imagem" id="galeriaImagem2" aria-hidden="true"></div>
+                <figcaption>
+                    <span>02</span>
+                    <h3>Contexto em um toque</h3>
+                    <p>Recomendações que aparecem no momento certo.</p>
+                </figcaption>
+            </figure>
+
+            <figure class="galeria-card">
+                <div class="galeria-imagem" id="galeriaImagem3" aria-hidden="true"></div>
+                <figcaption>
+                    <span>03</span>
+                    <h3>Estudo que continua</h3>
+                    <p>O registro vira conteúdo pronto para consultar.</p>
+                </figcaption>
+            </figure>
+        </div>
     </section>
 
-    <section id="beneficios" class="secao-placeholder">
-        <h2>Equipe</h2>
+    <!-- EQUIPE -->
+    <section id="beneficios" class="secao-equipe" aria-labelledby="equipe-titulo">
+        <div class="equipe-container">
+            <header class="equipe-intro">
+                <span class="eyebrow">Nossa equipe</span>
+                <h2 id="equipe-titulo">As pessoas por trás da Drakon.</h2>
+                <p>Conheça os integrantes responsáveis pelo desenvolvimento, planejamento e apresentação da solução.</p>
+            </header>
+
+            <div class="equipe-grid">
+                <!-- INTEGRANTE 01 — substitua nome, função, texto e foto quando tiver os dados. -->
+                <article class="equipe-card">
+                    <div class="equipe-foto" role="img" aria-label="Foto do integrante 1">
+                        <span>Foto</span>
+                    </div>
+                    <div class="equipe-info">
+                        <span class="equipe-numero">Integrante 01</span>
+                        <h3>Nome do integrante</h3>
+                        <p class="equipe-funcao">Função / responsabilidade</p>
+                        <p class="equipe-descricao">Breve descrição sobre a participação deste integrante no projeto.</p>
+                    </div>
+                </article>
+
+                <!-- INTEGRANTE 02 -->
+                <article class="equipe-card">
+                    <div class="equipe-foto" role="img" aria-label="Foto do integrante 2">
+                        <span>Foto</span>
+                    </div>
+                    <div class="equipe-info">
+                        <span class="equipe-numero">Integrante 02</span>
+                        <h3>Nome do integrante</h3>
+                        <p class="equipe-funcao">Função / responsabilidade</p>
+                        <p class="equipe-descricao">Breve descrição sobre a participação deste integrante no projeto.</p>
+                    </div>
+                </article>
+
+                <!-- INTEGRANTE 03 -->
+                <article class="equipe-card">
+                    <div class="equipe-foto" role="img" aria-label="Foto do integrante 3">
+                        <span>Foto</span>
+                    </div>
+                    <div class="equipe-info">
+                        <span class="equipe-numero">Integrante 03</span>
+                        <h3>Nome do integrante</h3>
+                        <p class="equipe-funcao">Função / responsabilidade</p>
+                        <p class="equipe-descricao">Breve descrição sobre a participação deste integrante no projeto.</p>
+                    </div>
+                </article>
+
+                <!-- INTEGRANTE 04 -->
+                <article class="equipe-card">
+                    <div class="equipe-foto" role="img" aria-label="Foto do integrante 4">
+                        <span>Foto</span>
+                    </div>
+                    <div class="equipe-info">
+                        <span class="equipe-numero">Integrante 04</span>
+                        <h3>Nome do integrante</h3>
+                        <p class="equipe-funcao">Função / responsabilidade</p>
+                        <p class="equipe-descricao">Breve descrição sobre a participação deste integrante no projeto.</p>
+                    </div>
+                </article>
+
+                <!-- INTEGRANTE 05 -->
+                <article class="equipe-card">
+                    <div class="equipe-foto" role="img" aria-label="Foto do integrante 5">
+                        <span>Foto</span>
+                    </div>
+                    <div class="equipe-info">
+                        <span class="equipe-numero">Integrante 05</span>
+                        <h3>Nome do integrante</h3>
+                        <p class="equipe-funcao">Função / responsabilidade</p>
+                        <p class="equipe-descricao">Breve descrição sobre a participação deste integrante no projeto.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
     </section>
 
-    <section id="dashboard-demo" class="secao-placeholder">
-        <h2>Contatos</h2>
+    <!-- CONTATO -->
+    <section id="dashboard-demo" class="secao-contato" aria-labelledby="contato-titulo">
+        <div class="contato-grid">
+            <header class="contato-intro">
+                <span class="eyebrow">Contato</span>
+                <h2 id="contato-titulo">Vamos conversar.</h2>
+
+                <div class="contato-canais">
+                    <a href="mailto:seuemail@exemplo.com" class="contato-canal">
+                        <span class="contato-canal-label">E-mail</span>
+                        <strong>seuemail@exemplo.com</strong>
+                    </a>
+                    <a href="#" class="contato-canal">
+                        <span class="contato-canal-label">Instagram</span>
+                        <strong>@jovi.projeto</strong>
+                    </a>
+                    <a href="#" class="contato-canal">
+                        <span class="contato-canal-label">LinkedIn</span>
+                        <strong>JOVI — Projeto</strong>
+                    </a>
+                </div>
+            </header>
+
+            <form class="contato-form" action="mailto:seuemail@exemplo.com" method="post" enctype="text/plain">
+                <div class="contato-form-header">
+                    <span>Fale com a nossa equipe</span>
+                </div>
+
+                <label for="contato-nome">Nome</label>
+                <input id="contato-nome" name="nome" type="text" placeholder="Seu nome" autocomplete="name" required>
+
+                <label for="contato-email">E-mail</label>
+                <input id="contato-email" name="email" type="email" placeholder="seuemail@exemplo.com" autocomplete="email" required>
+
+                <label for="contato-mensagem">Mensagem</label>
+                <textarea id="contato-mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem..." required></textarea>
+
+                <button type="submit" class="contato-botao">Enviar mensagem <span aria-hidden="true">↗</span></button>
+            </form>
+        </div>
     </section>
+    </main>
 
     <script src="scripts/script.js"></script>
 </body>

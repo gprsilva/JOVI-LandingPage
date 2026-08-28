@@ -1,11 +1,8 @@
-// script.js - atualizado
-// ============================================
 // CONFIG — um vídeo de hero por tema
-// ============================================
 const VIDEO_SOURCES = {
-    tema1: "midia/videos/VideoInicioLilas.mp4", // TODO: trocar pelo vídeo do tema Blue
-    tema2: "midia/videos/VideoInicioLilas.mp4", // tema Purple / Lilás
-    tema3: "midia/videos/VideoInicioLilas.mp4", // TODO: trocar pelo vídeo do tema Black
+    tema1: "midia/videos/VideoInicioLilas.mp4",
+    tema2: "midia/videos/VideoInicioLilas.mp4",
+    tema3: "midia/videos/VideoInicioLilas.mp4",
 };
 
 // Imagens de fundo dos 3 cards de solução
@@ -27,10 +24,7 @@ const SOLUCAO_IMAGENS = {
     },
 };
 
-// ============================================
 // MENU — destaque do link ativo conforme o scroll
-// ============================================
-
 const sections = document.querySelectorAll("section[id]");
 const links = document.querySelectorAll(".menu-link");
 const menuToggle = document.querySelector(".menu-toggle");
@@ -50,10 +44,8 @@ function atualizarMenuAtivo() {
     });
 }
 
-// ============================================
-// SISTEMA DE TEMAS
-// ============================================
 
+// SISTEMA DE TEMAS
 const heroVideo = document.getElementById("heroScrollVideo");
 const solucaoImagem1 = document.getElementById("solucaoImagem1");
 const solucaoImagem2 = document.getElementById("solucaoImagem2");
@@ -143,10 +135,8 @@ trocarVideoDoTema(temaSalvo);
 trocarImagemDaSolucao(temaSalvo);
 trocarImagemDaGaleria(temaSalvo);
 
-// ============================================
-// HERO — vídeo e slogan controlados pelo scroll
-// ============================================
 
+// HERO — vídeo e slogan controlados pelo scroll
 const heroTrack = document.querySelector(".hero-scroll-track");
 const headerEl = document.querySelector("header");
 const veja = document.getElementById("veja");
@@ -212,9 +202,6 @@ if (heroVideo && heroTrack) {
         }
     }
 
-    // Evita seeks redundantes e sobrepostos, que são a principal causa
-    // de travamento no scroll (cada seek pode exigir decodificar vídeo
-    // até o keyframe mais próximo).
     let ultimoProgressoQuantizado = null;
     let seekEmAndamento = false;
 
@@ -231,14 +218,8 @@ if (heroVideo && heroTrack) {
         const progress = clamp01(scrollable > 0 ? scrolled / scrollable : 0);
         const progressoVideo = quantizar(progress, PASSO_VIDEO);
 
-        // Só manda um novo seek se o valor quantizado mudou e o seek
-        // anterior já terminou — evita empilhar seeks no navegador.
         if (progressoVideo !== ultimoProgressoQuantizado && !seekEmAndamento) {
             ultimoProgressoQuantizado = progressoVideo;
-
-            // Nunca seekar exatamente em "duration": em vários navegadores
-            // isso dispara o estado de "ended" e pode fazer o vídeo voltar
-            // para o frame 0. Deixamos uma margem de segurança.
             const alvo = easeInOutCubic(progressoVideo) * duration;
             heroVideo.currentTime = Math.min(alvo, duration - 0.05);
         }

@@ -8,24 +8,18 @@
     <link rel="shortcut icon" href="midia/imgs/favicon.jpeg" type="image/x-icon">
 </head>
 <body class="tema1">
-
-    <!-- Barra de progresso de scroll -->
     <div class="scroll-progress" id="scrollProgress"></div>
-
-    <!-- Header fixo com menu e seletor de temas -->
     <header>
         <div class="header">
             <!-- Logo padrão -->
             <img src="midia/imgs/logo.png" class="logo logo-padrao" alt="JOVI">
             <!-- Logo branca -->
             <img src="midia/imgs/logo2.png" class="logo logo-branca" alt="JOVI">
-
             <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
                 <span class="sr-only">Abrir menu de navegação</span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
             </button>
-
             <nav class="menu" id="menu-principal" aria-label="Navegação principal">
                 <a href="#problema" class="menu-link active">Problema</a>
                 <a href="#problems" class="menu-link">Soluções</a>
@@ -34,7 +28,6 @@
                 <a href="#beneficios" class="menu-link">Nossa Equipe</a>
                 <a href="#dashboard-demo" class="menu-link">Contato</a>
             </nav>
-
             <div class="theme-switcher">
                 <input type="radio" id="tema1" name="tema" checked>
                 <label for="tema1">Blue</label>
@@ -45,15 +38,12 @@
             </div>
         </div>
     </header>
-
     <main>
     <!-- HERO -->
     <section id="hero" class="hero" aria-labelledby="hero-title">
         <div class="hero-scroll-track">
             <div class="hero-sticky">
-
                 <div class="hero-fallback" aria-hidden="true"></div>
-
                 <video
                     id="heroScrollVideo"
                     class="hero-video"
@@ -62,28 +52,23 @@
                     preload="auto"
                     aria-hidden="true"
                 ></video>
-
                 <div class="hero-copy">
                     <h1 id="hero-title" class="hero-title">
                         <span id="veja">Veja.</span>
                         <span id="entenda">Entenda.</span>
                         <span id="capture">Capture.</span>
                     </h1>
-
                     <p id="heroDescricao" class="hero-descricao">
                         Uma câmera inteligente que entende o contexto
                         antes mesmo de você apertar o botão.
                     </p>
                 </div>
-
             </div>
         </div>
     </section>
-
     <!-- PROBLEMA -->
     <section id="problema" class="secao-problema" aria-labelledby="problema-titulo">
         <div class="problema-grid">
-
             <header class="problema-intro">
                 <span class="eyebrow">Problema</span>
                 <h2 id="problema-titulo" class="problema-titulo">Quando o momento é rápido, a câmera precisa acompanhar.</h2>
@@ -91,33 +76,25 @@
                     Na rotina de estudos, uma lousa pode ser apagada em segundos. Em vez de procurar foco, brilho e modo de captura, estudantes precisam registrar com clareza no primeiro toque.
                 </p>
             </header>
-
             <div class="problema-cards">
-
                 <article class="problema-card">
                     <h3>O conteúdo não espera</h3>
                     <p>Slides, documentos e anotações precisam ser capturados antes que a oportunidade passe — sem uma etapa extra de configuração.</p>
                 </article>
-
                 <article class="problema-card">
                     <h3>Uma foto pode virar um obstáculo</h3>
                     <p>Baixa iluminação, reflexos e foco impreciso deixam textos distantes borrados ou escuros, comprometendo a leitura depois da aula.</p>
                 </article>
-
                 <article class="problema-card problema-card--texto">
                     <h3>Mais controles não significam mais agilidade</h3>
                     <p>Interfaces cheias de botões exigem conhecimento técnico justamente quando o usuário só quer abrir a câmera e confiar no resultado.</p>
                 </article>
-
             </div>
-
             <blockquote class="problema-lacuna">
                 <p>O desafio não é ensinar fotografia: é fazer a tecnologia entender o contexto e entregar uma imagem nítida, legível e pronta para usar.</p>
             </blockquote>
-
         </div>
     </section>
-
     <!-- SOLUÇÕES -->
     <section id="problems" class="secao-solucoes">
         <div class="solucoes-intro">
@@ -127,9 +104,7 @@
                 Cada solução da JOVI ataca uma etapa da rotina: o AdaptAI aprende os hábitos do usuário e adapta a câmera automaticamente, o Smart-Pop recomenda o modo certo sem exigir configuração, e o JoviEdu transforma o registro em conteúdo pronto para estudar.
             </p>
         </div>
-
         <div class="solucoes-grid">
-            <!-- Solução 1-->
             <article class="solucao-card">
                 <div class="solucao-imagem" id="solucaoImagem1" aria-hidden="true"></div>
                 <div class="solucao-overlay">
@@ -142,8 +117,6 @@
                     </div>
                 </div>
             </article>
-
-            <!-- Solução 2-->
             <article class="solucao-card">
                 <div class="solucao-imagem" id="solucaoImagem2" aria-hidden="true"></div>
                 <div class="solucao-overlay">
@@ -154,8 +127,6 @@
                     </div>
                 </div>
             </article>
-
-            <!-- Solução 3-->
             <article class="solucao-card">
                 <div class="solucao-imagem" id="solucaoImagem3" aria-hidden="true"></div>
                 <div class="solucao-overlay">
@@ -168,7 +139,6 @@
             </article>
         </div>
     </section>
-
     <section id="objetivos" class="secao-publico" aria-labelledby="publico-titulo">
         <div class="publico-grid">
             <header class="publico-intro">
@@ -176,12 +146,10 @@
                 <h2 id="publico-titulo">Para quem precisa registrar antes que o momento passe.</h2>
                 <p>Entre uma aula, o estágio e o próximo deslocamento, cada registro precisa acontecer no tempo certo. As nossas soluções entendem que essa rotina não oferece uma segunda chance, por isso elas ajudam a transformar lousas, slides e documentos em imagens nítidas antes que o conteúdo desapareça.</p>
             </header>
-
             <figure class="publico-imagem" role="img" aria-label="Espaço reservado para a imagem do público-alvo">
                 <img src="midia/imgs/publicoAlvo.png" alt="Imagem do público-alvo, representando uma estudante universitária em movimento, carregando livros e uma mochila, simbolizando a rotina agitada de quem precisa registrar informações rapidamente.">
                 <figcaption>Estudante full-time.</figcaption>
             </figure>
-
             <article class="publico-persona">
                 <p class="publico-nome">Mariana, 20</p>
                 <p class="publico-papel">Universitária e estagiária em grandes centros urbanos.</p>
@@ -200,7 +168,6 @@
                     </div>
                 </dl>
             </article>
-
             <blockquote class="publico-citacao">
                 <p>“Eu não quero aprender a configurar uma câmera. Quero salvar o que importa, com clareza, na primeira tentativa.”</p>
             </blockquote>
@@ -217,7 +184,6 @@
                     interface minimalista e recursos pensados para a rotina real.
                 </p>
             </header>
-
             <div class="galeria-grid">
                 <figure class="galeria-card galeria-card--destaque">
                     <div class="galeria-imagem" id="galeriaImagem1" aria-hidden="true"></div>
@@ -230,7 +196,6 @@
                         </div>
                     </figcaption>
                 </figure>
-
                 <figure class="galeria-card galeria-card--horizontal">
                     <div class="galeria-imagem" id="galeriaImagem2" aria-hidden="true"></div>
                     <figcaption class="galeria-caption">
@@ -242,7 +207,6 @@
                         </div>
                     </figcaption>
                 </figure>
-
                 <figure class="galeria-card galeria-card--horizontal">
                     <div class="galeria-imagem" id="galeriaImagem3" aria-hidden="true"></div>
                     <figcaption class="galeria-caption">
@@ -255,7 +219,6 @@
                     </figcaption>
                 </figure>
             </div>
-
             <div class="galeria-features" aria-label="Destaques da experiência JOVI">
                 <article class="galeria-feature">
                     <span>01</span>
@@ -275,7 +238,6 @@
             </div>
         </div>
     </section>
-
     <!-- EQUIPE -->
     <section id="beneficios" class="secao-equipe" aria-labelledby="equipe-titulo">
         <div class="equipe-container">
@@ -287,11 +249,10 @@
                     transformar a câmera em uma experiência mais inteligente.
                 </p>
             </header>
-
             <div class="equipe-grid">
                 <a class="equipe-card" href="https://www.linkedin.com/in/antonio-do-nascimento-ferreira-de-sousa/" target="_blank" rel="noopener noreferrer" aria-label="Abrir LinkedIn de Antonio do Nascimento">
                     <div class="equipe-foto" role="img" aria-label="Foto de Antonio do Nascimento">
-                        <img src="midia/imgs/Integrantes/Guilherme.jpeg" alt="Guilherme Pereira">
+                        <img src="midia/imgs/Integrantes/Antonio.JPG" alt="Antonio do Nascimento">
                     </div>
                     <div class="equipe-info">
                         <span class="equipe-numero">01 / Integrante</span>
@@ -300,7 +261,6 @@
                         <p class="equipe-descricao">Responsável pelo desenvolvimento do JoviEdu, plataforma integrada com IA que torna os conteúdos acadêmicos capturados pelo público alvo em material mais facilmente digerivel, além de desenvolver o backlog, requisitos e diagrama de caso de uso da solução</p>
                     </div>
                 </a>
-
                 <a class="equipe-card" href="https://www.linkedin.com/in/devgprsilva/" target="_blank" rel="noopener noreferrer" aria-label="Abrir LinkedIn de Guilherme Pereira">
                     <div class="equipe-foto" role="img" aria-label="Foto de Guilherme Pereira">
                         <img src="midia/imgs/Integrantes/Guilherme.jpeg" alt="Guilherme Pereira">
@@ -312,7 +272,6 @@
                         <p class="equipe-descricao">Atuou no front-end, foi responsável pelo desenvolvimento e estruturação completa da Landing Page, além da criação e prototipagem dos mockups das soluções — AdaptAI, Smart-Pop e JoviEdu. Em Python prestou suporte à construção e implementação das funcionalidades do JoviEdu.</p>
                     </div>
                 </a>
-
                 <a class="equipe-card" href="https://www.linkedin.com/in/leal9gustavo/" target="_blank" rel="noopener noreferrer" aria-label="Abrir LinkedIn de Gustavo Leal">
                     <div class="equipe-foto" role="img" aria-label="Foto de Gustavo Leal">
                         <img src="midia/imgs/Integrantes/Leal.jpeg" alt="Gustavo Leal">
@@ -324,7 +283,6 @@
                         <p class="equipe-descricao">Contribuí para a otimização da ideia e desenvolvimento visual do projeto JoviEdu, auxiliando na clareza das soluções e na definição das funções do “cérebro” central da aplicação.</p>
                     </div>
                 </a>
-
                 <a class="equipe-card" href="https://www.linkedin.com/in/matheus-mendes-041134299/" target="_blank" rel="noopener noreferrer" aria-label="Abrir LinkedIn de Matheus Mendes">
                     <div class="equipe-foto" role="img" aria-label="Foto de Matheus Mendes">
                         <img src="midia/imgs/Integrantes/Mendes.jpeg" alt="Matheus Mendes">
@@ -336,7 +294,6 @@
                         <p class="equipe-descricao">Atuou no desenvolvimento e organização do projeto, contribuindo na elaboração do backlog e definição do escopo, além da criação de diversos documentos de software. Responsável também pelo desenvolvimento e aprimoramento de códigos em Python, implementação e testes das funcionalidades.</p>
                     </div>
                 </a>
-
                 <a class="equipe-card" href="https://www.linkedin.com/in/matheus-sato-a7a88a387/" target="_blank" rel="noopener noreferrer" aria-label="Abrir LinkedIn de Matheus Sato">
                     <div class="equipe-foto" role="img" aria-label="Foto de Matheus Sato">
                         <img src="midia/imgs/Integrantes/Sato.jpeg" alt="Matheus Sato">
@@ -351,12 +308,10 @@
             </div>
         </div>
     </section>
-
     <!-- CONTATO -->
     <section id="dashboard-demo" class="secao-contato" aria-labelledby="contato-titulo">
         <div class="contato-decor contato-decor--top" aria-hidden="true"></div>
         <div class="contato-decor contato-decor--bottom" aria-hidden="true"></div>
-
         <div class="contato-container">
             <header class="contato-intro">
                 <span class="eyebrow">Contato</span>
@@ -365,7 +320,6 @@
                     Quer conhecer melhor a proposta, conversar sobre a solução ou
                     acompanhar o projeto? Fale com a equipe da Drakon.
                 </p>
-
                 <div class="contato-canais" aria-label="Canais de contato">
                     <a href="mailto:drakon@gmail.com" class="contato-canal">
                         <span class="contato-canal-icon" aria-hidden="true">✉</span>
@@ -375,7 +329,6 @@
                         </span>
                         <span class="contato-canal-arrow" aria-hidden="true">↗</span>
                     </a>
-
                     <a href="#" class="contato-canal">
                         <span class="contato-canal-icon" aria-hidden="true">@</span>
                         <span class="contato-canal-copy">
@@ -384,7 +337,6 @@
                         </span>
                         <span class="contato-canal-arrow" aria-hidden="true">↗</span>
                     </a>
-
                     <a href="#" class="contato-canal">
                         <span class="contato-canal-icon" aria-hidden="true">in</span>
                         <span class="contato-canal-copy">
@@ -395,7 +347,6 @@
                     </a>
                 </div>
             </header>
-
             <div class="contato-form-shell">
                 <div class="contato-form-top">
                     <div>
@@ -403,30 +354,25 @@
                         <h3>Envie uma mensagem.</h3>
                     </div>
                 </div>
-
                 <form class="contato-form" action="mailto:seuemail@exemplo.com" method="post" enctype="text/plain">
                     <div class="contato-form-row">
                         <div class="contato-field">
                             <label for="contato-nome">Nome</label>
                             <input id="contato-nome" name="nome" type="text" placeholder="Como podemos chamar você?" autocomplete="name" required>
                         </div>
-
                         <div class="contato-field">
                             <label for="contato-email">E-mail</label>
                             <input id="contato-email" name="email" type="email" placeholder="voce@email.com" autocomplete="email" required>
                         </div>
                     </div>
-
                     <div class="contato-field">
                         <label for="contato-assunto">Assunto <span>(opcional)</span></label>
                         <input id="contato-assunto" name="assunto" type="text" placeholder="Sobre o que você quer falar?">
                     </div>
-
                     <div class="contato-field">
                         <label for="contato-mensagem">Mensagem</label>
                         <textarea id="contato-mensagem" name="mensagem" rows="6" placeholder="Escreva sua mensagem..." required></textarea>
                     </div>
-
                     <button type="submit" class="contato-botao">
                         <span>Enviar mensagem</span>
                         <span aria-hidden="true">↗</span>

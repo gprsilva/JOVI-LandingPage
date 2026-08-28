@@ -11,7 +11,6 @@
 }
 
 /* =================VARIÁVEIS DE TEMA */
-
 :root {
     --transition-speed: 0.3s;
     --radius-card: 1rem;
@@ -73,7 +72,6 @@ body.tema3 {
 }
 
 /*   RESET   */
-
 * {
     margin: 0;
     padding: 0;
@@ -112,7 +110,6 @@ body {
 }
 
 /*BARRA DE PROGRESSO DE SCROLL */
-
 .scroll-progress {
     position: fixed;
     top: 0;
@@ -125,10 +122,7 @@ body {
     box-shadow: 0 0 8px var(--text-highlight);
 }
 
-/* ============================================
-   HEADER / MENU / SELETOR DE TEMAS
-   ============================================ */
-
+/*  HEADER */
 .header {
     position: fixed;
     top: 20px;
@@ -168,7 +162,6 @@ header.past-hero .header {
     display: block;
 }
 
-/* APENAS NO TEMA BLACK a logo muda durante o scroll */
 body.tema3 header.past-hero .logo-padrao {
     display: none;
 }
@@ -177,7 +170,6 @@ body.tema3 header.past-hero .logo-branca {
     display: block;
 }
 
-/* Nos temas Blue e Purple a logo NUNCA muda */
 body.tema1 header.past-hero .logo-padrao {
     display: block;
 }
@@ -311,9 +303,7 @@ body.tema2 header.past-hero .logo-branca {
     box-shadow: 0 0 20px color-mix(in srgb, var(--text-highlight) 45%, transparent);
 }
 
-/* ============================================
-   HERO — vídeo controlado por scroll
-   ============================================ */
+/*  HERO */
 
 .hero-scroll-track {
     position: relative;
@@ -439,16 +429,13 @@ body.tema2 header.past-hero .logo-branca {
     }
 }
 
-/* ============================================
-   SEÇÃO — PROBLEMA
-   ============================================ */
+/* SEÇÃO — PROBLEMA */
 
 .secao-problema {
     padding: 140px 40px 100px;
     border-top: 1px solid var(--card-border);
 }
 
-/* Grid Container principal da seção — 12 colunas */
 .problema-grid {
     max-width: 1200px;
     margin: 0 auto;
@@ -487,7 +474,6 @@ body.tema2 header.past-hero .logo-branca {
     color: var(--text-secondary);
 }
 
-/* Grid Item que também é, ele mesmo, um Grid Container (cards) */
 .problema-cards {
     grid-column: 1 / -1;
     display: grid;
@@ -539,9 +525,7 @@ body.tema2 header.past-hero .logo-branca {
     color: var(--text-primary);
 }
 
-/* ============================================
-   SEÇÃO — SOLUÇÕES
-   ============================================ */
+/* SEÇÃO — SOLUÇÕES */
 
 .secao-solucoes {
     padding: 120px 40px 160px;
@@ -605,10 +589,6 @@ body.tema2 header.past-hero .logo-branca {
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
-/* ============================================
-   IMAGENS DOS CARDS - CONFIGURAÇÃO BASE
-   ============================================ */
-
 .solucao-imagem {
     position: absolute;
     inset: 0;
@@ -623,54 +603,52 @@ body.tema2 header.past-hero .logo-branca {
     transform: scale(1.05);
 }
 
-/* ============================================
-   AJUSTES INDIVIDUAIS POR TEMA E POR CARD
-   ============================================ */
+/* AJUSTES INDIVIDUAIS POR TEMA E POR CARD */
 
 /* ========== TEMA 1 - BLUE ========== */
-body.tema1 #solucaoImagem1 { /* Câmera Inteligente - Blue */
+body.tema1 #solucaoImagem1 { 
     background-size: cover;
     background-position: center;
 }
 
-body.tema1 #solucaoImagem2 { /* Smart-Pop - Blue - Mover para ESQUERDA */
+body.tema1 #solucaoImagem2 { 
     background-size: cover;
     background-position: center;
 }
 
-body.tema1 #solucaoImagem3 { /* JoviEdu - Blue */
+body.tema1 #solucaoImagem3 { 
     background-size: cover;
     background-position: center;
 }
 
 /* ========== TEMA 2 - PURPLE (REFERÊNCIA) ========== */
-body.tema2 #solucaoImagem1 { /* Câmera Inteligente - Purple */
+body.tema2 #solucaoImagem1 {
     background-size: cover;
     background-position: center;
 }
 
-body.tema2 #solucaoImagem2 { /* Smart-Pop - Purple (do jeito que você quer) */
+body.tema2 #solucaoImagem2 { 
     background-size: cover;
     background-position: center;
 }
 
-body.tema2 #solucaoImagem3 { /* JoviEdu - Purple */
+body.tema2 #solucaoImagem3 {
     background-size: cover;
     background-position: center;
 }
 
 /* ========== TEMA 3 - BLACK ========== */
-body.tema3 #solucaoImagem1 { /* Câmera Inteligente - Black */
+body.tema3 #solucaoImagem1 { 
     background-size: cover;
     background-position: center;
 }
 
-body.tema3 #solucaoImagem2 { /* Smart-Pop - Black - Mover para DIREITA */
+body.tema3 #solucaoImagem2 { 
     background-size: cover;
     background-position: center;
 }
 
-body.tema3 #solucaoImagem3 { /* JoviEdu - Black */
+body.tema3 #solucaoImagem3 { 
     background-size: cover;
     background-position: center;
 }
@@ -692,14 +670,14 @@ body.tema3 #solucaoImagem3 { /* JoviEdu - Black */
     display: none;
 }
 
-/* O vídeo do tema Black tem fundo claro: em telas amplas, o texto permanece escuro. */
+
 body.tema3 .hero-title span,
 body.tema3 .hero-descricao {
     color: #000000;
     text-shadow: none;
 }
 
-/* Em viewport vertical, a imagem mantém o produto inteiro em cena. */
+
 @media (max-aspect-ratio: 3 / 4) {
     .hero-video {
         opacity: 0 !important;
@@ -729,7 +707,6 @@ body.tema3 .hero-descricao {
     }
 }
 
-/* Navegação compacta e conteúdo legível em telas de toque */
 @media (max-width: 700px) {
     .header {
         top: 12px;
@@ -842,9 +819,7 @@ body.tema3 .hero-descricao {
     overflow-wrap: anywhere; /* Permite quebra de linha em palavras longas */
 }
 
-/* ============================================
-   RESPONSIVIDADE
-   ============================================ */
+/* ==============RESPONSIVIDADE */
 
 /* ---- PROBLEMA — Tablet ---- */
 @media (max-width: 1100px) {
@@ -953,9 +928,7 @@ body.tema3 .hero-descricao {
     }
 }
 
-/* ============================================
-   SEÇÃO — PÚBLICO-ALVO
-   ============================================ */
+/* ===========SEÇÃO — PÚBLICO-ALVO */
 .secao-publico {
     padding: 140px 40px;
     border-top: 1px solid var(--card-border);
@@ -1118,7 +1091,6 @@ body.tema3 .hero-descricao {
     color: var(--text-primary);
 }
 
-/* No desktop, a imagem acompanha a introdução e o card sobe para a linha seguinte. */
 @media (min-width: 901px) {
     .publico-imagem {
         grid-row: 1 / span 2;
@@ -1161,7 +1133,7 @@ body.tema3 .hero-descricao {
 
     .publico-imagem {
         grid-column: 1 / -1;
-        aspect-ratio: 16 / 9;   /* formato mais largo faz sentido ocupando a largura toda */
+        aspect-ratio: 16 / 9;   
     }
 }
 
@@ -1199,9 +1171,7 @@ body.tema3 .hero-descricao {
     }
 }
 
-/* ============================================
-   SEÇÃO — GALERIA
-   ============================================ */
+/* ====================SEÇÃO — GALERIA */
 .secao-galeria {
     position: relative;
     padding: 150px 40px;
@@ -1480,9 +1450,7 @@ body.tema3 .hero-descricao {
     }
 }
 
-/* ============================================
-   SEÇÃO — NOSSA EQUIPE
-   ============================================ */
+/* ===========SEÇÃO — NOSSA EQUIPE */
 .secao-equipe {
     position: relative;
     padding: 150px 40px;
@@ -1517,7 +1485,6 @@ body.tema3 .hero-descricao {
     line-height: 1.7;
 }
 
-/* Linhas empilhadas, alternando foto à esquerda/direita a cada integrante */
 .equipe-grid {
     display: flex;
     flex-direction: column;
@@ -1539,7 +1506,6 @@ body.tema3 .hero-descricao {
     cursor: pointer;
 }
 
-/* Integrantes pares invertem o lado da foto */
 .equipe-card:nth-child(even) {
     flex-direction: row-reverse;
 }
@@ -1650,7 +1616,6 @@ body.tema3 .hero-descricao {
         gap: 16px;
     }
 
-    /* No mobile, a foto sempre fica em cima, independente da ordem par/ímpar */
     .equipe-card,
     .equipe-card:nth-child(even) {
         flex-direction: column;
@@ -1666,9 +1631,7 @@ body.tema3 .hero-descricao {
     }
 }
 
-/* ============================================
-   SEÇÃO — CONTATO
-   ============================================ */
+/* =====SEÇÃO — CONTATO*/
 .secao-contato {
     position: relative;
     isolation: isolate;
